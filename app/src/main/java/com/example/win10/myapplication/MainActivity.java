@@ -13,7 +13,7 @@ import java.util.Arrays;
 public class MainActivity extends AppCompatActivity {
 
     ArrayList personNames = new ArrayList<>(Arrays.asList("Rustom", "Raid", "Manikarnika", "Villain", "Sarkari Prauda Pra. Shalee Kasargod"));
-    ArrayList personImages = new ArrayList<>(Arrays.asList(R.drawable.rus, R.drawable.raid, R.drawable.mani, R.drawable.villn, R.drawable.spsk));
+    ArrayList personImages = new ArrayList<>(Arrays.asList("https://akshaydemo.000webhostapp.com/Trailers/Images/rus.png", "https://akshaydemo.000webhostapp.com/Trailers/Images/villn.png", "https://akshaydemo.000webhostapp.com/Trailers/Images/mani.png", "https://akshaydemo.000webhostapp.com/Trailers/Images/raid.png", "https://akshaydemo.000webhostapp.com/Trailers/Images/spsk.png"));
 
 
     @Override

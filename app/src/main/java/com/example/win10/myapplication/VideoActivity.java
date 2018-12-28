@@ -117,27 +117,27 @@ public class VideoActivity extends Activity {
         switch(actpos){
             case 0:
                 //whatever
-                path = "http://akshaydemo.000webhostapp.com/Trailers/Rustom.mp4";
+                path = "http://akshaydemo.000webhostapp.com/Trailers/Videos/Rustom.mp4";
                 break;
 
             case 1:
                 //whatever
-                path = "http://akshaydemo.000webhostapp.com/Trailers/EkVillain.mp4";
+                path = "http://akshaydemo.000webhostapp.com/Trailers/Videos/EkVillain.mp4";
                 break;
 
             case 2:
                 //whatever
-                path = "http://akshaydemo.000webhostapp.com/Trailers/Manikarnika.mp4";
+                path = "http://akshaydemo.000webhostapp.com/Trailers/Videos/Manikarnika.mp4";
                 break;
 
             case 3:
                 //whatever
-                path = "http://akshaydemo.000webhostapp.com/Trailers/Raid.mp4";
+                path = "http://akshaydemo.000webhostapp.com/Trailers/Videos/Raid.mp4";
                 break;
 
             case 4:
                 //whatever
-                path = "http://akshaydemo.000webhostapp.com/Trailers/Sarkari.mp4";
+                path = "http://akshaydemo.000webhostapp.com/Trailers/Videos/Sarkari.mp4";
                 break;
 
             default:

@@ -10,6 +10,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 /**
@@ -41,7 +44,11 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
         holder.name.setText(personNames.get(position).toString());
-        holder.image.setImageResource((Integer) personImages.get(position));
+    //    holder.image.setImageResource((Integer) personImages.get(position));
+
+        Glide.with(context)
+                .load(personImages.get(position).toString())
+                .into(holder.image);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
