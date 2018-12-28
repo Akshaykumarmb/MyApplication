@@ -38,6 +38,8 @@ import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
 import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
 import com.google.android.exoplayer2.util.Util;
 
+import java.util.ArrayList;
+
 public class VideoActivity extends Activity {
 
     SimpleExoPlayerView playerView;
@@ -47,6 +49,7 @@ public class VideoActivity extends Activity {
     int actpos=0;
     String path;
     VideoView simpleVideoView;
+    ArrayList<Object> object;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,9 +60,9 @@ public class VideoActivity extends Activity {
 
         Intent i=getIntent();
         pos=i.getStringExtra("Posi");
-
-
-       // actpos= Integer.parseInt(pos);
+        Bundle args = i.getBundleExtra("BUNDLE");
+        object = (ArrayList<Object>) args.getSerializable("ARRAYLIST");
+        actpos= Integer.parseInt(pos);
 
        // Toast.makeText(this,"Position"+pos,Toast.LENGTH_SHORT).show();
 
@@ -147,12 +150,19 @@ public class VideoActivity extends Activity {
                 //whatever
                 break;
         }*/
+     if(actpos<=object.size() && actpos >= 0) {
+         String temp = object.get(actpos).toString();
+         temp = temp.substring(0, temp.indexOf("."));
+         path = "http://akshaydemo.000webhostapp.com/Trailers/Videos/" + temp + ".mp4";
+         progDailog = ProgressDialog.show(this, "Please wait ...", "Retrieving data ...", true);
 
-        path = "http://akshaydemo.000webhostapp.com/Trailers/Videos/"+pos+".mp4";
-        progDailog = ProgressDialog.show(this, "Please wait ...", "Retrieving data ...", true);
-
-        simpleVideoView.setVideoURI(Uri.parse(path));
-        simpleVideoView.start();
+         simpleVideoView.setVideoURI(Uri.parse(path));
+         simpleVideoView.start();
+     }
+     else
+     {
+         finish();
+     }
     }
 
     private void initializePlayer() {

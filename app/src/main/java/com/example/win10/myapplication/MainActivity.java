@@ -22,8 +22,8 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList personNames = new ArrayList<>(Arrays.asList("Rustom", "Raid", "Manikarnika", "Villain", "Sarkari Prauda Pra. Shalee Kasargod"));
-    ArrayList personImages = new ArrayList<>(Arrays.asList("https://akshaydemo.000webhostapp.com/Trailers/Images/rus.png", "https://akshaydemo.000webhostapp.com/Trailers/Images/villn.png", "https://akshaydemo.000webhostapp.com/Trailers/Images/mani.png", "https://akshaydemo.000webhostapp.com/Trailers/Images/raid.png", "https://akshaydemo.000webhostapp.com/Trailers/Images/spsk.png"));
+   // ArrayList personNames = new ArrayList<>(Arrays.asList("Rustom", "Raid", "Manikarnika", "Villain", "Sarkari Prauda Pra. Shalee Kasargod"));
+  //  ArrayList personImages = new ArrayList<>(Arrays.asList("https://akshaydemo.000webhostapp.com/Trailers/Images/rus.png", "https://akshaydemo.000webhostapp.com/Trailers/Images/villn.png", "https://akshaydemo.000webhostapp.com/Trailers/Images/mani.png", "https://akshaydemo.000webhostapp.com/Trailers/Images/raid.png", "https://akshaydemo.000webhostapp.com/Trailers/Images/spsk.png"));
     String serverurl="https://akshaydemo.000webhostapp.com/Trailers/imglist.php";
     String res = "";
 
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 recyclerView.setLayoutManager(linearLayoutManager); // set LayoutManager to RecyclerView
 
                 // call the constructor of CustomAdapter to send the reference and data to Adapter
-                CustomAdapter customAdapter = new CustomAdapter(MainActivity.this, personNames, files);
+                CustomAdapter customAdapter = new CustomAdapter(MainActivity.this, files, files);
                 recyclerView.setAdapter(customAdapter); // set the Adapter to RecyclerView
 
                // Toast.makeText(MainActivity.this,"resp-"+files,Toast.LENGTH_LONG).show();
