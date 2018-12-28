@@ -57,7 +57,9 @@ public class VideoActivity extends Activity {
 
         Intent i=getIntent();
         pos=i.getStringExtra("Posi");
-        actpos= Integer.parseInt(pos);
+
+
+       // actpos= Integer.parseInt(pos);
 
        // Toast.makeText(this,"Position"+pos,Toast.LENGTH_SHORT).show();
 
@@ -114,7 +116,7 @@ public class VideoActivity extends Activity {
 
     void InitvideoUrl()
     {
-        switch(actpos){
+     /*   switch(actpos){
             case 0:
                 //whatever
                 path = "http://akshaydemo.000webhostapp.com/Trailers/Videos/Rustom.mp4";
@@ -144,7 +146,9 @@ public class VideoActivity extends Activity {
                  finish();
                 //whatever
                 break;
-        }
+        }*/
+
+        path = "http://akshaydemo.000webhostapp.com/Trailers/Videos/"+pos+".mp4";
         progDailog = ProgressDialog.show(this, "Please wait ...", "Retrieving data ...", true);
 
         simpleVideoView.setVideoURI(Uri.parse(path));

@@ -47,13 +47,16 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     //    holder.image.setImageResource((Integer) personImages.get(position));
 
         Glide.with(context)
-                .load(personImages.get(position).toString())
+                .load("https://akshaydemo.000webhostapp.com/Trailers/Images/"+personImages.get(position).toString())
                 .into(holder.image);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                pos= String.valueOf(position);
+               // pos= String.valueOf(position);
+
+                String pos=personImages.get(position).toString();
+                pos=pos.substring(0,pos.indexOf("."));
                 Intent intent = new Intent(view.getContext(), VideoActivity.class);
                 intent.putExtra("Posi",pos);
                 view.getContext().startActivity(intent);
